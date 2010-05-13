@@ -1,4 +1,5 @@
-%h2 Listing <%= plural_name %>
+- title
+%h2 Listing <%= plural_name.capitalize %>
 - if !@<%= plural_name %>.empty?
   .<%= plural_name %>
     = render :partial => "<%= singular_name %>", :collection => @<%= plural_name %>
