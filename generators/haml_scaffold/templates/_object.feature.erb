@@ -1,0 +1,43 @@
+Feature: <%= singular_name.capitalize %>
+  In order to not look like a bloody fool
+  As a competent developer
+  I want to change several bits of this feature *before* I check it in
+
+  Background:
+    Given "sharon" a logged in user
+
+  Scenario: Create a new <%= singular_name.capitalize %>
+    When I go to the <%= plural_name.capitalize %> page
+    And I follow "New <%= singular_name.capitalize %>"
+    Then I should be on the new <%= singular_name.capitalize %> page
+    And I should not see "Untitled"
+    And I should not see "translation_missing"
+    When I fill in "Attributes" with "Relevant Text"
+    And I press "Create <%= singular_name.capitalize %>"
+    Then I should be on the show <%= singular_name.capitalize %> page
+    And I should see "Relevant Text"
+
+  Scenario: List all <%= plural_name.capitalize %>
+    Given The <%= singular_name.capitalize %> "My New <%= singular_name.capitalize %>" exists
+    And The <%= singular_name.capitalize %> "My Other <%= singular_name.capitalize %>" exists
+    And The <%= singular_name.capitalize %> "This Other <%= singular_name.capitalize %>" exists
+    When I go to the <%= pluaral_name.capitalize %> page
+    Then I should not see "Untitled"
+    And I should not see "translation_missing"
+    And I should see "My New <%= singular_name.capitalize %>"
+    And I should see "My Other <%= singular_name.capitalize %>"
+    And I should see "This Other <%= singular_name.capitalize %>"
+    And There should be exactly "3" <%= singular_name.capitalize %>
+
+  Scenario: Edit a <%= singular_name.capitalize %>
+    Given The <%= singular_name.capitalize %> "My New <%= singular_name.capitalize %>" exists
+    When I visit the <%= singular_name.capitalize %> edit screen for "My New <%= singular_name.capitalize %>"
+    Then I should not see "Untitled"
+    And I should not see "translation_missing"
+    When I fill in "Attributes" with "Some Relevant Text"
+    And I press "Update <%= singular_name.capitalize %>"
+    Then I should be on the show <%= singular_name.capitalize %> page
+    And I should see "Some Relevant Text"
+    And I should not see "Old And Irrelevant Text"
+
+  

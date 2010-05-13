@@ -1,0 +1,12 @@
+Given /^I visit the <%= singular_name.capitalize %> edit screen for "([^\"]*)"$/ do |<%= singular_name %>_name|
+  visit edit_<%= singular_name %>_path(<%= singular_name.capitalize %>.find_by_name(<%= singular_name %>_name))
+end
+
+Given /^The <%= singular_name.capitalize %> "([^\"]*)" exists$/ do |<%= singular_name %>_name|
+  Factory.create(:<%= singular_name %>, :name => <%= singular_name %>_name)
+end
+
+Then /^There should be exactly "([^\"]*)" <%= plural_name.capitalize %>$/ do |num|
+  <%= singular_name.capitalize %>.all.size.should == num.to_i
+end
+

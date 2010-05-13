@@ -54,13 +54,22 @@ class HamlScaffoldGenerator < Rails::Generator::NamedBase
       m.template("_form.html.haml.erb", File.join('app/views', controller_class_path, controller_file_name, "_form.html.haml"))
       m.template("_object.html.haml.erb", File.join('app/views', controller_class_path, controller_file_name, "_#{name}.html.haml"))
       m.template('controller.rb.erb', File.join('app/controllers', controller_class_path, "#{controller_file_name}_controller.rb"))
-      m.template('helper.rb.erb',          File.join('app/helpers',     controller_class_path, "#{controller_file_name}_helper.rb"))
+      m.template('helper.rb.erb', File.join('app/helpers', controller_class_path, "#{controller_file_name}_helper.rb"))
       m.directory('app/views/layouts')
       m.template('layout.html.haml.erb', 'app/views/layouts/application.html.haml', :collision => :skip, :assigns => {:application_name => @application_name})
       m.directory('public/stylesheets/sass')
       m.template('stylesheet.sass', 'public/stylesheets/sass/application.sass', :collision => :skip)
       m.route_resources controller_file_name
       m.dependency 'model', [name] + @args, :collision => :skip
+
+      # Cucumber feature
+      m.directory('features/step_definitions')
+      m.template("_object.feature.erb", File.join('features', "#{name}.feature"))
+      m.template("_object_steps.rb.erb", File.join('features', 'step_definitions', "#{name}_steps.rb"))
+
+      # Factory_Girl factory
+      m.directory('spec/factories')
+      m.template("_object_factory.rb.erb", File.join('spec', 'factories', "#{name}_factory.rb"))
 
     end
   
