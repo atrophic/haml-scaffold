@@ -19,11 +19,3 @@ generators/haml_scaffold/templates/view_new.html.haml.erb
 generators/haml_scaffold/templates/view_show.html.haml.erb
 init.rb
 lib/haml_scaffold/version.rb
-samples/posts_controller.rb
-samples/posts_controller_test.rb
-samples/views/_form.html.haml
-samples/views/_post.html.haml
-samples/views/edit.html.haml
-samples/views/index.html.haml
-samples/views/new.html.haml
-samples/views/show.html.haml
