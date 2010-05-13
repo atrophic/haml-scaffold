@@ -5,7 +5,10 @@ README.rdoc
 Rakefile
 generators/haml_scaffold/haml_scaffold_generator.rb
 generators/haml_scaffold/templates/_form.html.haml.erb
+generators/haml_scaffold/templates/_object.feature.erb
 generators/haml_scaffold/templates/_object.html.haml.erb
+generators/haml_scaffold/templates/_object_factory.rb.erb
+generators/haml_scaffold/templates/_object_steps.rb.erb
 generators/haml_scaffold/templates/controller.rb.erb
 generators/haml_scaffold/templates/helper.rb.erb
 generators/haml_scaffold/templates/layout.html.haml.erb
