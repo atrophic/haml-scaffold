@@ -21,7 +21,7 @@ Feature: <%= singular_name.capitalize %>
     Given The <%= singular_name.capitalize %> "My New <%= singular_name.capitalize %>" exists
     And The <%= singular_name.capitalize %> "My Other <%= singular_name.capitalize %>" exists
     And The <%= singular_name.capitalize %> "This Other <%= singular_name.capitalize %>" exists
-    When I go to the <%= pluaral_name.capitalize %> page
+    When I go to the <%= plural_name.capitalize %> page
     Then I should not see "Untitled"
     And I should not see "translation_missing"
     And I should see "My New <%= singular_name.capitalize %>"
