@@ -27,7 +27,7 @@ Feature: <%= singular_name.capitalize %>
     And I should see "My New <%= singular_name.capitalize %>"
     And I should see "My Other <%= singular_name.capitalize %>"
     And I should see "This Other <%= singular_name.capitalize %>"
-    And There should be exactly "3" <%= singular_name.capitalize %>
+    And There should be exactly "3" <%= plural_name.capitalize %>
 
   Scenario: Edit a <%= singular_name.capitalize %>
     Given The <%= singular_name.capitalize %> "My New <%= singular_name.capitalize %>" exists
