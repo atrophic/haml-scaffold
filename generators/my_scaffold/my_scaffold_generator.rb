@@ -60,7 +60,7 @@ class MyScaffoldGenerator < Rails::Generator::NamedBase
       m.directory('public/stylesheets/sass')
       m.template('stylesheet.sass', 'public/stylesheets/sass/application.sass', :collision => :skip)
       m.route_resources controller_file_name
-      m.dependency 'model', [name] + @args, :collision => :skip
+      m.dependency 'rspec_model', [name] + @args + ['--skip-fixture'], :collision => :skip
 
       # Cucumber feature
       m.directory('features/step_definitions')
