@@ -1,4 +1,4 @@
-class HamlScaffoldGenerator < Rails::Generator::NamedBase
+class MyScaffoldGenerator < Rails::Generator::NamedBase
   default_options :skip_timestamps => false, :skip_migration => false
 
   attr_reader   :controller_name,
@@ -78,7 +78,7 @@ class HamlScaffoldGenerator < Rails::Generator::NamedBase
   protected
     # Override with your own usage banner.
     def banner
-      "Usage: #{$0} haml_scaffold ModelName [field:type, field:type]"
+      "Usage: #{$0} my_scaffold ModelName [field:type, field:type]"
     end
 
     def add_options!(opt)
