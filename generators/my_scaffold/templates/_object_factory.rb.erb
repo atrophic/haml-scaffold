@@ -1,3 +1,5 @@
 Factory.define(:<%= singular_name %>) do |f|
-  f.name { |u| u.name }
+<% for attribute in attributes -%>
+  f.<%= attribute.name %> { |u| u.<%= attribute.name %> }
+<% end -%>
 end
